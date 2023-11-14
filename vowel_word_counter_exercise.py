@@ -50,6 +50,7 @@ def main():
             break
 
         print(vowel_counter(input_string), "vowels in:", input_string)
+        print(word_counter(input_string), "words in:", input_string)
 
 
 
