@@ -38,4 +38,47 @@ def isPrime(x):
 
     return True
 
-print(isPrime(49))  
+# print(isPrime(49))
+
+def isComposite(x):
+    """Returns whether or not the given number x is composite
+
+    A composite number has more than 2 factors.
+    A natural number greater than 1 that is not prime is called a
+        composite number
+    Note, the number 1 is neither prime nor composite.
+
+    For example:
+    - Calling isComposite(9) will return True
+    - Calling isComposite(22) will return True
+    - Calling isComposite(3) will return False
+    - Calling isComposite(41) will return False
+    """
+
+    # Keep track of the amount of factors the number has 
+    factors = 0
+
+    # iterate beginning with the number 2
+    for num in range(1, x + 1):
+        # if the number we are looking at divides evenly into the give x
+        if x % num == 0:
+            print(num)
+            # increase the amount of factors tracker
+            factors += 1
+        # if the factors goes over 2 -> return True, 3+ facotrs for the given x
+        if factors > 2:
+            return True
+
+    print(factors)
+    # return False since the factors count is less than 3
+    return False
+
+print(isComposite(79))
+
+
+
+
+
+
+
+    
