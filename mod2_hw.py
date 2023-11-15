@@ -73,12 +73,36 @@ def isComposite(x):
     # return False since the factors count is less than 3
     return False
 
-print(isComposite(79))
+# print(isComposite(79))
 
 
+def isPerfect(x):
+    """Returns whether or not the given number x is perfet
+
+    A number is said to be perfect if it is equal to the sum of all its factors
+        (for obvious reasons the list of factors beign considered does now
+        include the number itself
+
+    Example: 6 + 3 + 2 + 1, hence 6 is perfect.
+    Exaample: 28 is another example since 1 + 2+ 4 + 7 + 14 is 28
+    Note, the number 1 is not a perfect number
+    """
+    pn = 0
+    # your code here
+    # since 1 is not a Perfect number == return false if given
+    if x == 1:
+        return False
+
+    # iterate through the givven range beginning at
+    for num in range(1, x):
+        print(num)
+        if x % num == 0:
+            pn += num
+
+    if pn ==  x:
+        return True
+    else:
+        return False
 
 
-
-
-
-    
+print(isPerfect(3))
