@@ -80,7 +80,7 @@ def isPerfect(x):
     """Returns whether or not the given number x is perfet
 
     A number is said to be perfect if it is equal to the sum of all its factors
-        (for obvious reasons the list of factors beign considered does now
+        (for obvious reasons the list of factors being considered does not
         include the number itself
 
     Example: 6 + 3 + 2 + 1, hence 6 is perfect.
@@ -93,16 +93,47 @@ def isPerfect(x):
     if x == 1:
         return False
 
-    # iterate through the givven range beginning at
+    # iterate through the givven range beginning at 1
     for num in range(1, x):
-        print(num)
+        # if the number is a factor is the given x -> add the value to the pn(perfect number)
         if x % num == 0:
             pn += num
-
+    #  if the pn is equal to the given x return True else False
     if pn ==  x:
         return True
     else:
         return False
 
 
-print(isPerfect(3))
+# print(isPerfect(3))
+
+def isAbundant(x):
+    """Returns whether ornot the given number x is abundant.
+
+    A number is considered to be abundant if the sum of its factors (aside from
+    the number) is greater than the number itself.
+
+    Example: 12 is abundant since 1+2+3+4+6 = 16 > 12.
+    However, a number like 15, where the sum of the factors is 1 + 3 + 5 + 9 is not abundant.
+    """
+
+    # your code here
+    # keep track of the factor total
+    total = 0
+
+    # iterate from 1 to the number before the given x
+    for num in range(1, x):
+        # if the number is a mod of the given value(divided evenly into x)
+        if x % num == 0:
+            #  add it to the total
+            total += num
+            # check if the total went over the given x
+            if total > x:
+                return True
+
+    if total > x:
+        return True
+    else:
+        return False
+
+print(isAbundant(72))
