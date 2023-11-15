@@ -136,4 +136,47 @@ def isAbundant(x):
     else:
         return False
 
-print(isAbundant(72))
+# print(isAbundant(72))
+import math
+
+def isTriangle(x):
+    """Returns whether or not a given numbrer x is triangle
+
+    The triangle number Tn is a number that can be represented in the form
+    of a triangular grid of points where the first row contains a single element
+    and each subsequent row contains one more element than the previous
+
+    We canjust use the fact that the nth triangular number can be found by using the formula:
+    Tn = n(n + 1) / 2
+
+    Example: 3 is a triangle number since 3 = 2(3) / 2
+    3 ---> 2nd position (2 * 3 / 2)
+
+    Example: 15 is triangular since 15 = 5(6) / 2
+    15 --> 5th position (5 * 6 / 2)
+    """
+    if x < 0:
+        return False
+    n = int((-1 + (1 + 8 * x) ** 0.5) / 2)
+
+    return n * (n + 1) // 2 == x
+    # a, b = 1, 1
+    # c = ( -2 * x)
+    # d = (b * b) - (4 * a * c)
+
+    #    if d < 0:
+    #        return False
+
+    # find the roots of the equation
+    # root1 = ( -b + math.sqrt(d)) / (2 * a)
+    # root2 = ( -b - math.sqrt(d)) / (2 * a)
+
+    # if root1 > 0 and math.floor(root1) == root1:
+    #     return True
+
+    # if root2 > 0 and math.floor(root2) == root2:
+    #     return True
+
+print(isTriangle(232))
+
+
