@@ -177,6 +177,57 @@ def isTriangle(x):
     # if root2 > 0 and math.floor(root2) == root2:
     #     return True
 
-print(isTriangle(232))
+# print(isTriangle(232))
+
+def isNarcissistic(x):
+    """Returns whether or not a given number in Narcissistic.
+
+    A positive imteger is called a narcissistic number if it is equal to the sum of its
+    own digits raised tot eh power of the number of digits.
+
+    Example 153 is narcissistic because 1^3 + 5^3 + 3^# = 1 + 125 + 27 = 153.
+    Note that by this definition all singled digit numbers are narcissistic.
+    """
+    j = x
+    total = 0
+    # your code here
+    if x < 0:
+        return False
+
+    digits = []
+    total = 0
+    while j > 0:
+        digits.insert(0, j % 10)
+        j = j // 10
+
+    print(digits)
+    print(len(digits))
+    print("j:", j)
+    j == j // 10
+    power = len(digits)
+    for num in digits:
+        raised = num ** power
+        total += num ** power
+        print('raised',raised)
+        print(total)
+
+isNarcissistic(153)
 
 
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+    
